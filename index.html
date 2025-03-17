@@ -3,126 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reciclaje para Niños</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Página Web Seño Natalia</title>
     <style>
-        /* Estilos generales */
+        @keyframes gradientBackground {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
-            background-color: #ffcc00;
+            background: linear-gradient(45deg, #f3e5f5, #e8f5e9, #e1f5fe, #fff9c4); /* Rosa, verde, azul, amarillo */
+            background-size: 400% 400%;
+            animation: gradientBackground 10s ease infinite;
             margin: 0;
             padding: 0;
+            color: #4caf50; /* Verde elegante */
+        }
+
+        header {
+            background-color: #ab47bc; /* Lila suave */
+            color: white;
+            font-size: 36px;
             text-align: center;
+            padding: 40px;
+            border-bottom: 4px solid #ffeb3b; /* Borde amarillo brillante */
+            transition: transform 0.3s ease-in-out;
+            box-shadow: 0 4px 15px rgba(171, 71, 188, 0.3);
         }
-        /* Estilo de la barra de navegación */
+
+        header:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(171, 71, 188, 0.5);
+        }
+
+        h1 {
+            color: #ffffff; /* Blanco */
+            font-size: 50px;
+            letter-spacing: 2px;
+        }
+
+        .intro {
+            font-size: 22px;
+            color: #607d8b; /* Gris azulado */
+            text-align: center;
+            margin-top: 30px;
+            line-height: 1.6;
+            opacity: 0.9;
+            font-weight: bold;
+        }
+
         nav {
-            background-color: #ff5733;
-            padding: 15px;
-            border-radius: 10px;
+            background-color: #c8e6c9; /* Verde claro */
+            color: #388e3c;
+            font-size: 22px;
+            text-align: center;
+            padding: 20px 0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(56, 142, 62, 0.3);
+            transition: transform 0.3s ease;
         }
+
+        nav:hover {
+            transform: scale(1.05);
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
         nav a {
             color: white;
+            background-color: #00bcd4; /* Azul vibrante */
             text-decoration: none;
-            margin: 0 15px;
+            font-size: 20px;
             font-weight: bold;
-            font-size: 1.2em;
+            padding: 12px 24px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0, 188, 212, 0.3);
         }
-        /* Título principal con diseño llamativo */
-        .titulo {
-            font-size: 3em;
-            color: #33cc33;
-            text-shadow: 5px 5px 5px black;
-            background: url('https://www.aula21.net/cazas/cazasaula21/reciclaje.gif') no-repeat center;
-            background-size: contain;
-            height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+
+        nav a:hover {
+            background-color: #ffeb3b; /* Amarillo brillante */
+            color: #388e3c; /* Verde oscuro */
+            transform: scale(1.1);
         }
-        /* Información del autor */
-        .autor {
-            background-color: #3366ff;
-            color: rgb(134, 190, 241);
-            font-weight: bold;
-            padding: 15px;
-            text-align: left;
-            border-radius: 10px;
+
+        footer {
+            background-color: #ab47bc; /* Lila suave */
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 18px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 10px rgba(171, 71, 188, 0.3);
         }
-        /* Secciones generales con estilos llamativos */
-        .seccion {
-            padding: 20px;
-            margin: 15px;
-            border-radius: 20px;
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-            font-size: 1.3em;
-        }
-        .intro { background-color: #66ccff; color: white; display: flex; border: 5px dashed white; }
-        .preguntas { background-color: #d391ff; color: black; text-align: left; font-size: 1.2em; border: 5px solid red; }
-        .recursos { background-color: lightgreen; color: black; text-align: left; font-size: 1.2em; border: 5px dotted green; }
-        .granpregunta { background-color: pink; color: black; text-align: left; font-size: 1.3em; border: 5px double purple; }
-        .evaluacion { background-color: orange; color: black; text-align: left; font-size: 1.3em; border: 5px groove brown; }
-        .creditos { background-color: lavender; color: black; text-align: left; font-size: 1.2em; border: 5px inset blue; }
-        table { width: 100%; border-collapse: collapse; }
-        td, th { border: 2px solid black; padding: 15px; background-color: #ffff99; }
     </style>
 </head>
 <body>
     <header>
-        <nav>
-            <a href="#introduccion">Introducción</a>
-            <a href="#preguntas">Preguntas</a>
-            <a href="#recursos">Recursos</a>
-            <a href="#granpregunta">La Gran Pregunta</a>
-            <a href="#evaluacion">Evaluación</a>
-            <a href="#creditos">Créditos</a>
-        </nav>
-        <h1 class="titulo">♻️ Reciclaje Divertido ♻️</h1>
+        <h1>PÁGINA WEB SEÑO NATALIA</h1>
     </header>
-    <section class="autor">
-        <p><strong>Autor:</strong> Natalia Maria Jiménez Canto</p>
-        <p><strong>Área:</strong> Ciencias</p>
-        <p><strong>Nivel:</strong> Primaria </p>
-    </section>
-    <section id="introduccion" class="seccion intro">
-        <h2>INTRODUCCIÓN 🤔</h2>
-      <!--  esto a sido cambiado por maria -->
-        <p>🌍✨¡Conviértete en un HÉROE del PLANETA! 🌱♻️  ¿Sabías que los países más avanzados no son los que más basura tiran, sino los que mejor la reciclan? 🏆🌎 
-            ¡Y tú puedes ayudar a salvar el mundo! 💪💚Cada vez que reciclas, le das una segunda vida a los materiales y ayudas a que la Tierra siga siendo un lugar bonito 
-            y sano para todos. 🚀 En esta aventura, descubrirás por qué es tan importante cuidar el medioambiente y cómo puedes hacerlo. ¡Vamos, el planeta cuenta contigo! 🌟♻️</p>
-    </section>
-    <section id="preguntas" class="seccion preguntas">
-        <h2>PREGUNTAS ❓</h2>
-        <p>1.- ¿Cuál es la materia prima para la fabricación de papel?</p>
-        <p>2.- ¿Por qué crees que es necesario reciclar el papel?</p>
-    </section>
-    <section id="recursos" class="seccion recursos">
-        <h2>RECURSOS</h2>
-        <table>
-            <tr>
-                <td>Página 1</td>
-                <td><a href="http://www.iespana.es/natureduca/activ_reciclaje_papel.htm">http://www.iespana.es/natureduca/activ_reciclaje_papel.htm</a></td>
-            </tr>
-            <tr>
-                <td>Página 2</td>
-                <td><a href="http://www.recicla.com/index.htm">http://www.recicla.com/index.htm</a></td>
-            </tr>
-            <tr>
-                <td>Página 3</td>
-                <td><a href=" http://alternativa-joven.org/extrenatura/sub4/rrr.html"> http://alternativa-joven.org/extrenatura/sub4/rrr.html</a></td>
-            </tr>
-        </table>
-    </section>
-    <section id="granpregunta" class="seccion granpregunta">
-        <h2>LA GRAN PREGUNTA 🔊</h2>
-        <p>Vamos a probar tu idea sobre el reciclado: ¿ Qué porcentaje de la basura doméstica crees que se puede reciclar?...(piensatelo y contesta)...Ahora busca en la página 2 y comprueba.</p>
-    </section>
-    <section id="evaluacion" class="seccion evaluacion">
-        <h2>EVALUACIÓN 📚</h2>
-        <p>Vamos a ver qué tan bien lo hiciste.✍️ Lo más importante es que expliques bien tus respuestas, escribas con claridad y sigas las reglas del lenguaje. ¡Así aprenderemos juntos de la mejor manera! 🎉📖</p>
-    </section>
-    <section id="creditos" class="seccion creditos">
-        <h2>CRÉDITOS</h2>
-        <p>Agradecemos a los autores de las páginas que es mi hija Maria que es la mas guapa del mundo y obviamente mi hija favorita...</p>
-    </section>
+
+    <div class="intro">
+        <p>¡Hola! Soy la Seño Natalia y aquí encontrarás todos los trabajos y actividades para mis pequeños alumnos.</p>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="actividades.html">Actividad Sostenibilidad </a></li>
+            <li><a href="proyectos.html">proyecto 2</a></li>
+            <li><a href="dibujos.html">proyecto 3</a></li>
+            <li><a href="cuentos.html">proyecto 4</a></li>
+        </ul>
+    </nav>
+
+    <footer>
+        <p>&copy; 2025 Seño Natalia.</p>
+    </footer>
 </body>
 </html>
